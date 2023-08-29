@@ -1,32 +1,195 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>CSS Flex</title>
-	<link rel="stylesheet" href="default.css">
-	<style>
-		.flex-container {
-			display: flex;
-			height: 100vh;
-			align-items: center;
-		}
-		.flex-item:nth-child(2) {
-			/* align-self: auto; */
-			/* align-self: stretch; */
-			align-self: flex-start;
-			/* align-self: flex-end; */
-			/* align-self: center; */
-			/* align-self: baseline; */
-		}
-	</style>
-</head>
-<body>
-	<div class="flex-container">
-		<div class="flex-item">AAAAAAAAAA</div>
-		<div class="flex-item">BB</div>
-		<div class="flex-item">CCCCCC</div>
-	</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Flex</title>
+    <link rel="stylesheet" href="default.css" />
+    <style>
+      /*  
+			margin: auto로 flex-item 정렬
+      .flex-container {
+        display: flex;
+        width: 600px;
+        margin-left: auto;
+      }
+			
+
+      .flex-item {
+        width: 150px;
+      }
+			
+
+      .flex-item:nth-last-child(1) {
+        margin: auto -> 남아있는 margin 을 다 소비한다.
+        margin-left: auto;
+      }
+			
+			*/
+
+      /* 고정 컬럼, 가변 컬럼
+      .flex-container {
+        display: flex;
+      }
+
+      .flex-item {
+      }
+
+      .flex-item:nth-child(1) {
+        flex: 0 0 auto;
+        width: 150px;
+      }
+
+      .flex-item:nth-child(2) {
+        flex-grow: 1;
+      }
+
+      .flex-item:nth-child(3) {
+        flex: 0 0 auto;
+        width: 200px;
+      }
+			 */
+
+      /*  */
+
+      .page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .content {
+        /* flex-grow 늘어나게함. */
+        flex: 1 auto;
+        padding: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header flex-item">header</header>
+      <section class="content">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia
+        temporibus enim non quasi eligendi exercitationem dolores delectus ullam
+        alias voluptates, incidunt nobis voluptatum libero vitae illo ex error
+        assumenda quam! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Molestias cupiditate a vitae optio ad quidem. Laborum, porro
+        praesentium? Totam officia quam, culpa perferendis accusantium
+        repudiandae enim sapiente temporibus ea dicta. Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Officia temporibus enim non quasi
+        eligendi exercitationem dolores delectus ullam alias voluptates,
+        incidunt nobis voluptatum libero vitae illo ex error assumenda quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        cupiditate a vitae optio ad quidem. Laborum, porro praesentium? Totam
+        officia quam, culpa perferendis accusantium repudiandae enim sapiente
+        temporibus ea dicta. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Officia temporibus enim non quasi eligendi exercitationem dolores
+        delectus ullam alias voluptates, incidunt nobis voluptatum libero vitae
+        illo ex error assumenda quam! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias cupiditate a vitae optio ad quidem. Laborum,
+        porro praesentium? Totam officia quam, culpa perferendis accusantium
+        repudiandae enim sapiente temporibus ea dicta. Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Officia temporibus enim non quasi
+        eligendi exercitationem dolores delectus ullam alias voluptates,
+        incidunt nobis voluptatum libero vitae illo ex error assumenda quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        cupiditate a vitae optio ad quidem. Laborum, porro praesentium? Totam
+        officia quam, culpa perferendis accusantium repudiandae enim sapiente
+        temporibus ea dicta. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Officia temporibus enim non quasi eligendi exercitationem dolores
+        delectus ullam alias voluptates, incidunt nobis voluptatum libero vitae
+        illo ex error assumenda quam! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias cupiditate a vitae optio ad quidem. Laborum,
+        porro praesentium? Totam officia quam, culpa perferendis accusantium
+        repudiandae enim sapiente temporibus ea dicta. Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Officia temporibus enim non quasi
+        eligendi exercitationem dolores delectus ullam alias voluptates,
+        incidunt nobis voluptatum libero vitae illo ex error assumenda quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        cupiditate a vitae optio ad quidem. Laborum, porro praesentium? Totam
+        officia quam, culpa perferendis accusantium repudiandae enim sapiente
+        temporibus ea dicta. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Officia temporibus enim non quasi eligendi exercitationem dolores
+        delectus ullam alias voluptates, incidunt nobis voluptatum libero vitae
+        illo ex error assumenda quam! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias cupiditate a vitae optio ad quidem. Laborum,
+        porro praesentium? Totam officia quam, culpa perferendis accusantium
+        repudiandae enim sapiente temporibus ea dicta. Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Officia temporibus enim non quasi
+        eligendi exercitationem dolores delectus ullam alias voluptates,
+        incidunt nobis voluptatum libero vitae illo ex error assumenda quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        cupiditate a vitae optio ad quidem. Laborum, porro praesentium? Totam
+        officia quam, culpa perferendis accusantium repudiandae enim sapiente
+        temporibus ea dicta. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Officia temporibus enim non quasi eligendi exercitationem dolores
+        delectus ullam alias voluptates, incidunt nobis voluptatum libero vitae
+        illo ex error assumenda quam! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias cupiditate a vitae optio ad quidem. Laborum,
+        porro praesentium? Totam officia quam, culpa perferendis accusantium
+        repudiandae enim sapiente temporibus ea dicta. Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Officia temporibus enim non quasi
+        eligendi exercitationem dolores delectus ullam alias voluptates,
+        incidunt nobis voluptatum libero vitae illo ex error assumenda quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        cupiditate a vitae optio ad quidem. Laborum, porro praesentium? Totam
+        officia quam, culpa perferendis accusantium repudiandae enim sapiente
+        temporibus ea dicta. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Officia temporibus enim non quasi eligendi exercitationem dolores
+        delectus ullam alias voluptates, incidunt nobis voluptatum libero vitae
+        illo ex error assumenda quam! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias cupiditate a vitae optio ad quidem. Laborum,
+        porro praesentium? Totam officia quam, culpa perferendis accusantium
+        repudiandae enim sapiente temporibus ea dicta. Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Officia temporibus enim non quasi
+        eligendi exercitationem dolores delectus ullam alias voluptates,
+        incidunt nobis voluptatum libero vitae illo ex error assumenda quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        cupiditate a vitae optio ad quidem. Laborum, porro praesentium? Totam
+        officia quam, culpa perferendis accusantium repudiandae enim sapiente
+        temporibus ea dicta. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Officia temporibus enim non quasi eligendi exercitationem dolores
+        delectus ullam alias voluptates, incidunt nobis voluptatum libero vitae
+        illo ex error assumenda quam! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias cupiditate a vitae optio ad quidem. Laborum,
+        porro praesentium? Totam officia quam, culpa perferendis accusantium
+        repudiandae enim sapiente temporibus ea dicta. Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Officia temporibus enim non quasi
+        eligendi exercitationem dolores delectus ullam alias voluptates,
+        incidunt nobis voluptatum libero vitae illo ex error assumenda quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        cupiditate a vitae optio ad quidem. Laborum, porro praesentium? Totam
+        officia quam, culpa perferendis accusantium repudiandae enim sapiente
+        temporibus ea dicta. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Officia temporibus enim non quasi eligendi exercitationem dolores
+        delectus ullam alias voluptates, incidunt nobis voluptatum libero vitae
+        illo ex error assumenda quam! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias cupiditate a vitae optio ad quidem. Laborum,
+        porro praesentium? Totam officia quam, culpa perferendis accusantium
+        repudiandae enim sapiente temporibus ea dicta. Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Officia temporibus enim non quasi
+        eligendi exercitationem dolores delectus ullam alias voluptates,
+        incidunt nobis voluptatum libero vitae illo ex error assumenda quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        cupiditate a vitae optio ad quidem. Laborum, porro praesentium? Totam
+        officia quam, culpa perferendis accusantium repudiandae enim sapiente
+        temporibus ea dicta. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Officia temporibus enim non quasi eligendi exercitationem dolores
+        delectus ullam alias voluptates, incidunt nobis voluptatum libero vitae
+        illo ex error assumenda quam! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Molestias cupiditate a vitae optio ad quidem. Laborum,
+        porro praesentium? Totam officia quam, culpa perferendis accusantium
+        repudiandae enim sapiente temporibus ea dicta. Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Officia temporibus enim non quasi
+        eligendi exercitationem dolores delectus ullam alias voluptates,
+        incidunt nobis voluptatum libero vitae illo ex error assumenda quam!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+        cupiditate a vitae optio ad quidem. Laborum, porro praesentium? Totam
+        officia quam, culpa perferendis accusantium repudiandae enim sapiente
+        temporibus ea dicta.
+      </section>
+      <footer class="footer flex-item">footer</footer>
+    </div>
+  </body>
 </html>
