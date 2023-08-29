@@ -75,3 +75,52 @@ label[for="modal-switch"] span {
   opacity: 0;
   top: 0;
 }
+
+@media (min-width: 1024px) {
+  .page {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    width: 100%;
+  }
+  .menu {
+    width: 100%;
+  }
+
+  .secondary {
+    width: 20%;
+  }
+
+  /* footer의 order는 0인것임. -> flex-item의 형제들끼리 order 관계 */
+  .secondary-a {
+    order: 1;
+  }
+  .secondary-b {
+    order: 3;
+  }
+
+  .primary {
+    order: 2;
+    width: 60%;
+  }
+
+  .footer {
+    order: 4;
+    width: 100%;
+    border-top: 1px solid lightgray;
+  }
+}
+
+@media (min-width: 1400px) {
+  .primary {
+    /* 정확한 px로 작성할 경우 width를 사용하는게 안전하다. */
+    width: calc(100% - 600px);
+    /* flex-grow로 유연하게 만들 경우 특정 px일 때 줄바꿈 처리가 될 수 있음. */
+    /* flex: 1 1 auto; */
+  }
+  .secondary {
+    width: 300px;
+  }
+}
