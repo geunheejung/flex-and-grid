@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>CSS Flex</title>
-	<link rel="stylesheet" href="default.css">
-	<style>
-		.flex-container {
-			display: flex;
-			flex-direction: column;
-			min-height: 100vh;
-			/* border: 10px solid red; */
-		}
-		.flex-item {
-			flex: 1 auto;
-		}
-		@media (min-width: 600px) {
-			.flex-container {
-				flex-direction: row;
-				flex-wrap: wrap;
-			}
-			.flex-item {
-				width: 50%;
-				/* flex-grow: 0; */
-				/* flex: 0 auto; */
-				/* flex-basis: 50%; */
-			}
-		}
-		@media (min-width: 900px) {
-			.flex-item {
-				width: 30%;
-			}
-		}
-	</style>
-</head>
-<body>
-	<div class="flex-container">
-		<div class="flex-item">AAAAAAAAAA</div>
-		<div class="flex-item">BB</div>
-		<div class="flex-item">CCCCCC</div>
-		<div class="flex-item">AAAAAAAAAA</div>
-		<div class="flex-item">BB</div>
-		<div class="flex-item">CCCCCC</div>
-		<div class="flex-item">AAAAAAAAAA</div>
-		<div class="flex-item">BB</div>
-		<div class="flex-item">CCCCCC</div>
-	</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Flex</title>
+    <link rel="stylesheet" href="default.css" />
+    <style>
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        /* height로 지정해줄 경우 컨텐츠의 영역에 무관하게 고정값으로 지정 -> 스크롤 발생 */
+        min-height: 100vh;
+      }
+
+      .flex-item {
+        flex: 1 auto;
+      }
+
+      @media (min-width: 600px) {
+        .flex-container {
+          flex-flow: row wrap;
+        }
+
+        .flex-item {
+          width: 50%; /*-> 정확한 비율로 고정 잡을 경우 */
+          /* flex-basis: 50%; */
+          flex-basis: auto; /* 현재 지정된 width를 기본값으로 가진다. */
+        }
+      }
+
+      @media (min-width: 900px) {
+        .flex-item {
+          /* flex-item의 대한 flex-grow 속성이 '1' 이기에 flex-basis 또는 width보다 더 차지할 수 있는 영역 존재 시 늘어남. */
+          width: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item">AAAAAAAAAA</div>
+      <div class="flex-item">BB</div>
+      <div class="flex-item">CCCCCC</div>
+      <div class="flex-item">AAAAAAAAAA</div>
+      <div class="flex-item">BB</div>
+      <div class="flex-item">CCCCCC</div>
+      <div class="flex-item">AAAAAAAAAA</div>
+      <div class="flex-item">BB</div>
+      <div class="flex-item">CCCCCC</div>
+    </div>
+  </body>
 </html>
