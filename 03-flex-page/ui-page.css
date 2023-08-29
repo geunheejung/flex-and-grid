@@ -1,111 +1,77 @@
-.header	{
-	display: flex;
-	align-items: center;
-	/* justify-content: space-between; */
-	height: 80px;
-	padding: 0 1rem;
+.header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 0 1rem;
+  /* justify-content: space-between; */
 }
-/* .header에 justify-content: space-between; 대신 사용 가능 */
-.search-form {
-	width: 300px;
-	max-width: 60%;
-	margin-left: auto;
-	margin-right: 3rem;
+
+.header .search-form {
+  /* width가 300px이지만, 부모 엘리먼트 width의 60%를 넘지는 않도록 설정. */
+  /* 브라우저 폭을 줄여서 부모 엘리먼트 폭이 400px이 된다면, 400px의 60%인 240px */
+  /* 아무리 창 사이즈가 작아져도 최소한의 여백을 확보하기 위한 의도. */
+  width: 300px;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: 3rem;
 }
+
 .primary {
-	padding: 1rem;
+  padding: 1rem;
 }
+
 .secondary {
-	padding: 1rem;
+  padding: 1rem;
 }
+
 .secondary-a {
-	background: white;
+  background: #fff;
 }
+
 .secondary-b {
-	color: white;
-	background: #666;
+  color: #fff;
+  background: #666;
 }
+
 .footer {
-	padding: 1rem;
-	border-top: 1px solid lightgray;
-	text-align: center;
+  padding: 1rem;
+  text-align: center;
 }
-.modal {
-	display: none;
-	top: 80px;
+
+#modal-switch {
+  font-size: 2rem;
 }
 #modal-switch:checked ~ .modal {
-	display: flex;
-}
-label[for="modal-switch"] {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	top: 1.3rem;
-	right: 1rem;
-	/* z-index: 100; */
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-	/* background: red; */
-}
-label[for="modal-switch"]:before {
-	content: "⚑";
-	font-size: 2rem;
-	cursor: pointer;
+  display: flex;
 }
 #modal-switch:checked ~ label[for="modal-switch"]:before {
-	color: dodgerblue;
+  color: dodgerblue;
 }
+.modal {
+  z-index: 1;
+  display: none;
+}
+label[for="modal-switch"] {
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1.3rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+}
+label[for="modal-switch"]:before {
+  content: "메뉴";
+}
+
 #modal-switch,
 label[for="modal-switch"] span {
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	width: 1px;
-	height: 1px;
-	opacity: 0;
-}
-
-@media (min-width: 1024px) {
-	.page {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.header {
-		width: 100%;
-	}
-	.menu {
-		width: 100%;
-	}
-	.primary {
-		order: 2;
-		width: 60%;
-	}
-	.secondary {
-		width: 20%;
-	}
-	.secondary-a {
-		order: 1;
-	}
-	.secondary-b {
-		order: 3;
-	}
-	.footer {
-		order: 4;
-		width: 100%;
-	}
-}
-
-@media (min-width: 1400px) {
-	.primary {
-		width: calc(100% - 600px);
-		/* flex-grow: 1; */
-		/* flex: 1 1 auto; */
-		/* flex: auto; */
-	}
-	.secondary {
-		width: 300px;
-	}
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  top: 0;
 }
