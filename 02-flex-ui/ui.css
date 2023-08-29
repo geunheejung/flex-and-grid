@@ -83,3 +83,12 @@
   display: flex;
   margin-bottom: 1.5em;
 }
+/* user list */
+.friend-item {
+  align-items: center;
+}
+.user-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
