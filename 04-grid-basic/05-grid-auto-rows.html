@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="default.css" />
     <style>
       /* grid-auto-columns, grid-auto-rows */
-      .grid-container {
+      .grid-container-a {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, minmax(100px, auto));
@@ -16,6 +16,24 @@
         /* 동적인 rows일 경우 불편함. -> 게시글 등등 */
         /* grid-auto-rows: minmax(100px, auto); */
         gap: 1rem;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(25%, auto));
+        grid-template-rows: repeat(5, minmax(50px, auto));
+        /* 다른 셸에 의해 빈 셸이 생길 경우 Grid 배치의 기본 설정은 아이템이 row를 기준으로 순서대로 배치 */
+        /* 들어갈 자리가 없으면 그 칸은 비워두고 아래로 배치가 된다. */
+        grid-auto-flow: row;
+      }
+      .grid-item:nth-child(2) {
+        grid-column: auto / span 3;
+      }
+      .grid-item:nth-child(5) {
+        grid-column: auto / span 3;
+      }
+      .grid-item:nth-child(7) {
+        grid-column: auto / span 2;
       }
     </style>
   </head>
@@ -25,22 +43,12 @@
       <div class="grid-item">B</div>
       <div class="grid-item">C</div>
       <div class="grid-item">D</div>
-      <div class="grid-item">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-        expedita nemo illum saepe id aliquam. Nisi voluptates quis reprehenderit
-        inventore ad, dicta velit officia alias ullam quisquam, quae beatae,
-        distinctio voluptatibus eveniet dolores facere blanditiis iusto illum!
-        Molestiae qui, facere odio, veritatis quo, aspernatur cum eveniet maxime
-        totam sunt harum.
-      </div>
       <div class="grid-item">F</div>
       <div class="grid-item">G</div>
       <div class="grid-item">H</div>
       <div class="grid-item">I</div>
       <div class="grid-item">F</div>
       <div class="grid-item">G</div>
-      <div class="grid-item">H</div>
-      <div class="grid-item">I</div>
     </div>
   </body>
 </html>
